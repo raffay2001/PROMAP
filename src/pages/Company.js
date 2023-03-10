@@ -13,7 +13,7 @@ import Box from "@mui/material/Box"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
 import Container from "@mui/material/Container"
-import Link from "@mui/material/Link"
+import { Link } from "react-router-dom"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import { useParams } from "react-router-dom"
 import data from "../data"
@@ -23,6 +23,18 @@ import { Collapse, List, ListItem, ListItemButton, ListItemIcon, ListItemText } 
 import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material"
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+const COMPANY_NAMES = {
+  "gul-ahmed":
+    "Gul Ahmed is known for its high-quality products that are made using state-of-the-art technology and the finest materials. The brand prides itself on its innovative designs and its ability to adapt to changing fashion trends. The company's fabric collection includes a wide variety of materials, including cotton, lawn, silk, chiffon, and velvet, which are available in different prints, colors, and textures.",
+  "sana-safinaz":
+    "Sana Safinaz is a Pakistani luxury fashion brand that was founded by two talented designers, Sana Hashwani and Safinaz Muneer. The brand is known for its unique and contemporary designs that combine traditional and modern elements, resulting in stunning collections that are both elegant and sophisticated. Sana Safinaz offers a diverse range of products, including clothing, accessories.",
+  zellbury:
+    "Zellbury is a Pakistani clothing brand that offers trendy and affordable fashion for men, women, and children. The brand is known for its vibrant and colorful designs, which are inspired by the latest fashion trends and cater to the needs and preferences of its diverse customer base",
+  "j.": "J. is a well-known Pakistani clothing brand that offers a diverse range of products, including men's, women's, and children's clothing, as well as home textiles and accessories. The brand's clothing collection features a variety of traditional and contemporary designs, which are made using high-quality fabrics and feature intricate embroidery, prints, and embellishments.",
+  khadi:
+    "Khadi is a traditional hand-woven fabric that is made in India. The fabric is made using natural fibers such as cotton, silk, and wool, and is known for its texture, durability, and comfort. Khadi is often associated with India's freedom struggle, as it was promoted by Mahatma Gandhi as a means of promoting self-sufficiency and economic independence. ",
+}
 
 const theme = createTheme()
 
@@ -65,9 +77,7 @@ export default function Company() {
               {company_details[0]?.storeName}
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
+              {COMPANY_NAMES[company_name]}
             </Typography>
             <Stack sx={{ pt: 4 }} direction="row" spacing={2} justifyContent="center">
               <Button variant="contained">View all stores</Button>
@@ -93,13 +103,8 @@ export default function Company() {
                 >
                   <CardMedia
                     component="img"
-                    sx={
-                      {
-                        // 16:9
-                        // pt: "56.25%",
-                      }
-                    }
-                    image="https://source.unsplash.com/random"
+                    sx={{ width: "100%", height: "10rem" }}
+                    image={company.img}
                     alt="random"
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
@@ -128,8 +133,9 @@ export default function Company() {
                     <List></List>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">View Location</Button>
-                    {/* <Button size="small">Edit</Button> */}
+                    <Link to="/maps" style={{textDecoration: "none"}}>
+                      <Button size="small">View Location</Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>
