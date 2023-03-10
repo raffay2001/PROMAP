@@ -214,7 +214,7 @@ const center = {
 function Map({ inputText }) {
   const [marker, setMarker] = useState([]);
   const [filterData, setFilterData] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   useEffect(() => {
     if (inputText && data) {
       const searchValue = inputText.toLowerCase(); // convert search value to lowercase for case-insensitive search
@@ -237,7 +237,11 @@ function Map({ inputText }) {
     <LoadScript googleMapsApiKey="AIzaSyCI1_gTAMiklKuDVArJ8AxfK2FUOA1S9jc">
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
         {toDisplay?.map((item, index) => (
-          <MarkerF key={index} position={item.location} onClick={() => navigate("/company/"+ item.linkName) } />
+          <MarkerF
+            key={index}
+            position={item.location}
+            onClick={() => navigate("/company/" + item.linkName)}
+          />
         ))}
       </GoogleMap>
     </LoadScript>

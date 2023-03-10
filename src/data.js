@@ -1,7 +1,7 @@
 export default [
   {
     storeName: "Gul Ahmed",
-    linkName: "/company/gul-ahmed",
+    linkName: "gul-ahmed",
     address: "Dolmen Mall Clifton, Karachi, Pakistan",
     products: ["clothes", "bedding", "accessories"],
     location: { lat: 24.8139, lng: 67.0422 },
@@ -9,7 +9,7 @@ export default [
 
   {
     storeName: "Gul Ahmed",
-    linkName: "/company/gul-ahmed",
+    linkName: "gul-ahmed",
 
     address: "The Forum Mall, Karachi, Pakistan",
     products: ["clothes", "bedding", "accessories"],
@@ -18,7 +18,7 @@ export default [
 
   {
     storeName: "Gul Ahmed",
-    linkName: "/company/gul-ahmed",
+    linkName: "gul-ahmed",
 
     address: "LuckyOne Mall, Karachi, Pakistan",
     products: ["clothes", "bedding", "accessories", "footwear", "jewelry"],
@@ -27,7 +27,7 @@ export default [
 
   {
     storeName: "Gul Ahmed",
-    linkName: "/company/gul-ahmed",
+    linkName: "gul-ahmed",
 
     address: "Ocean Mall, Karachi, Pakistan",
     products: [
@@ -43,7 +43,7 @@ export default [
 
   {
     storeName: "Gul Ahmed",
-    linkName: "/company/gul-ahmed",
+    linkName: "gul-ahmed",
 
     address: "Saima Mall, Karachi, Pakistan",
     products: [
@@ -57,11 +57,12 @@ export default [
     location: { lat: 24.9097, lng: 67.0972 },
   },
 
-  { // "/company/khadi"
+  {
+    // "khadi"
     storeName: "Khadi",
-    linkName: "khadi", // router filter 
-// image branch image 
-// main page image 
+    linkName: "khadi", // router filter
+    // image branch image
+    // main page image
     address: "Dolmen Mall Clifton, Karachi, Pakistan",
     products: [
       "perfume",
@@ -143,7 +144,7 @@ export default [
   },
   {
     storeName: "Junaid Jamshed",
-    linkName: "/company/j.",
+    linkName: "j.",
 
     address: "Dolmen Mall, Tariq Rd, PECHS, Karachi, Pakistan",
     products: [
@@ -158,6 +159,7 @@ export default [
   },
   {
     storeName: "Sana Safinaz",
+    linkName: "sana-safinaz",
     address: "Park Towers, Clifton, Karachi, Pakistan",
     products: [
       "formal wear",
@@ -171,6 +173,7 @@ export default [
   },
   {
     storeName: "Junaid Jamshed",
+    linkName: "j.",
     address: "Zamzama Blvd, Defence Housing Authority, Karachi, Pakistan",
     products: [
       "kurtas",
@@ -184,6 +187,7 @@ export default [
   },
   {
     storeName: "Sana Safinaz",
+    linkName: "sana-safinaz",
     address: "Lucky One Mall, Rashid Minhas Rd, Karachi, Pakistan",
     products: [
       "formal wear",
@@ -197,6 +201,7 @@ export default [
   },
   {
     storeName: "Junaid Jamshed",
+    linkName: "j.",
     address: "Lucky One Mall, Rashid Minhas Rd, Karachi, Pakistan",
     products: [
       "kurtas",
@@ -210,6 +215,7 @@ export default [
   },
   {
     storeName: "Zellbury",
+    linkName: "zellbury",
     address: "Dolmen Mall Clifton, Karachi, Pakistan",
     products: [
       "kurtas",
@@ -226,6 +232,7 @@ export default [
   },
   {
     storeName: "Zellbury",
+    linkName: "zellbury",
     address: "Lucky One Mall, Rashid Minhas Rd, Karachi, Pakistan",
     products: [
       "kurtas",
@@ -242,6 +249,7 @@ export default [
   },
   {
     storeName: "Zellbury",
+    linkName: "zellbury",
     address: "Bahria Town Karachi, Karachi, Pakistan",
     products: [
       "kurtas",

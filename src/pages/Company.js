@@ -1,80 +1,50 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button";
-import CameraIcon from "@mui/icons-material/PhotoCamera";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import CssBaseline from "@mui/material/CssBaseline";
-import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useParams } from "react-router-dom";
-import data from "../data";
-import StoreIcon from "@mui/icons-material/Store";
-import InventoryIcon from '@mui/icons-material/Inventory';
-import {
-  Collapse,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
-import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
+import * as React from "react"
+import AppBar from "@mui/material/AppBar"
+import Button from "@mui/material/Button"
+import CameraIcon from "@mui/icons-material/PhotoCamera"
+import Card from "@mui/material/Card"
+import CardActions from "@mui/material/CardActions"
+import CardContent from "@mui/material/CardContent"
+import CardMedia from "@mui/material/CardMedia"
+import CssBaseline from "@mui/material/CssBaseline"
+import Grid from "@mui/material/Grid"
+import Stack from "@mui/material/Stack"
+import Box from "@mui/material/Box"
+import Toolbar from "@mui/material/Toolbar"
+import Typography from "@mui/material/Typography"
+import Container from "@mui/material/Container"
+import Link from "@mui/material/Link"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
+import { useParams } from "react-router-dom"
+import data from "../data"
+import StoreIcon from "@mui/icons-material/Store"
+import InventoryIcon from "@mui/icons-material/Inventory"
+import { Collapse, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
+import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material"
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-const theme = createTheme();
+const theme = createTheme()
 
 export default function Company() {
-  let { company_name } = useParams();
-  const [company_details, setCompanyDetails] = React.useState(data);
-  const [open, setOpen] = React.useState(true);
+  let { company_name } = useParams()
+  const [company_details, setCompanyDetails] = React.useState(data)
+  const [open, setOpen] = React.useState(true)
 
   const handleClick = () => {
-    setOpen(!open);
-  };
+    setOpen(!open)
+  }
   React.useEffect(() => {
-    console.log(data, "data");
-    const filtered_data = data.filter(
-      (company) => company.linkName === company_name
-    );
-    console.log(filtered_data, "filter");
+    console.log(data, "data")
+    const filtered_data = data.filter((company) => company.linkName === company_name)
+    console.log(filtered_data, "filter")
 
-    setCompanyDetails(filtered_data);
-    console.log(company_details, "details");
-  }, [company_name]);
+    setCompanyDetails(filtered_data)
+    console.log(company_details, "details")
+  }, [company_name])
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <StoreIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Company Profile
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <main>
         {/* Hero unit */}
         <Box
@@ -94,22 +64,12 @@ export default function Company() {
             >
               {company_details[0]?.storeName}
             </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="text.secondary"
-              paragraph
-            >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
+            <Typography variant="h5" align="center" color="text.secondary" paragraph>
+              Something short and leading about the collection below—its contents, the creator, etc.
+              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
+              entirely.
             </Typography>
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
+            <Stack sx={{ pt: 4 }} direction="row" spacing={2} justifyContent="center">
               <Button variant="contained">View all stores</Button>
               <Button variant="outlined">Secondary action</Button>
             </Stack>
@@ -177,22 +137,6 @@ export default function Company() {
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
-      <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </Box>
-      {/* End footer */}
     </ThemeProvider>
-  );
+  )
 }
